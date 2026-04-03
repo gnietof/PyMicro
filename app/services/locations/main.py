@@ -3,14 +3,15 @@ from pathlib import Path
 from fastapi import FastAPI
 import ibm_db
 
+from app.services.locations.locations import LocationsRepository
 from app.services.members.members import MembersRepository
 from app.shared.db2 import db2
 from app.settings import settings
 
 app = FastAPI(title="Members Service")
 
-@app.get("/members")
-def get_members():
+@app.get("/locations")
+def get_locations():
 
     # dsn = (
     #     "DATABASE=BLUDB;"  # Replace with your database name
@@ -33,7 +34,7 @@ def get_members():
     #     row = ibm_db.fetch_assoc(stmt)
     # ibm_db.close(conn)
 
-    members = MembersRepository()
-    rows = members.get_members()
+    locations = LocationsRepository()
+    rows = locations.get_locations()
     
     return rows
