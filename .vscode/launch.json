@@ -12,6 +12,7 @@
             "args": [
                 "app.services.locations.main:app",
                 "--reload",
+                "--host", "0.0.0.0",
                 "--port", "9080"
             ],
             "jinja": true
@@ -24,9 +25,18 @@
             "args": [
                 "app.services.members.main:app",
                 "--reload",
+                "--host", "0.0.0.0",
                 "--port", "9081"
             ],
             "jinja": true
-        }
+        },
+        {
+        "name": "Frontend",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "python",
+        "args": ["-m","http.server","5500"],
+        "cwd": "${workspaceFolder}/frontend"
+        }        
     ]
 }

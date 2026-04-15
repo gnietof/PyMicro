@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+</head>
+<body>
+
+<h1>Location List</h1>
+
+<button onclick="loadLocations()">Load Locations</button>
+<select id="country-select">
+    <option value="">Select a country</option>
+</select>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>WLC</th>
+            <th>Campus Id</th>
+            <th>Campus Name</th>
+        </tr>
+    </thead>
+    <tbody id="locations-table">
+    </tbody>
+</table>
+
+</body>
+</html>
+
+<script src="app.js"></script>
+
+<script>
+    window.onload = function() {
+        loadCountries();
+    }
+
+</script>
